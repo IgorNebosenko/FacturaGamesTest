@@ -1,7 +1,7 @@
 {
-    "name": "Core.Entities.Player",
-    "rootNamespace": "Core.Entities.Player",
-    "references": ["GUID:111573a203b0f3347bb6d13ef1ca6f57","GUID:650cd9f7e9a808c45b04ff2984a48671","GUID:839bca77a1e8f2244ab315d3538cd36b"],
+    "name": "Core.Entities.Configs",
+    "rootNamespace": "Core.Entities.Configs",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

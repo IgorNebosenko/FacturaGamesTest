@@ -5,10 +5,10 @@ namespace Core.Entities.Interfaces
     public interface IHaveHealth
     {
         event Action OnDeath;
-        int Health { get; }
+        float Health { get; }
         
-        void Init(int health);
-        void TakeDamage(int damage);
+        void InitHealth(float health);
+        void TakeDamage(float damage);
 
         void Death();
     }

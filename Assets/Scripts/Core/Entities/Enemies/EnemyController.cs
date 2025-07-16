@@ -1,49 +1,25 @@
 ﻿using System;
-using Core.Entities.Configs;
 using Core.Entities.Interfaces;
 using Core.Entities.Interfaces.Motors;
-using ElectrumGames.Extensions.CommonInterfaces;
 using UnityEngine;
-using Zenject;
 
-namespace Core.Entities.Player
+namespace Core.Entities.Enemies
 {
-    public class PlayerController : MonoBehaviour, IHaveMotor, IHaveHealth, IHavePosition
+    public class EnemyController : MonoBehaviour, IHaveHealth, IHaveMotor
     {
-        private PlayerConfig _playerConfig;
-        
         public event Action OnDeath;
         public float Health { get; private set; }
         public IMotor Motor { get; private set; }
-        public Vector3 Position => transform.position;
-
-        [Inject]
-        private void Construct(PlayerConfig playerConfig)
-        {
-            _playerConfig = playerConfig;
-        }
-
-        private void Start()
-        {
-            Motor = new PlayerMotor(transform, _playerConfig.Speed);
-            
-            InitHealth(_playerConfig.Health);
-        }
-
-        private void FixedUpdate()
-        {
-            Motor.Simulate(Time.fixedDeltaTime);
-        }
-
+        
         public void InitHealth(float health)
         {
             if (health <= 0)
             {
-                Debug.LogError("Player health <= 0, so method Death() invoked");
+                Debug.LogError("Health of enemy <= 0, so method Death() invoked");
                 Death();
                 return;
             }
-
+            
             Health = health;
         }
 

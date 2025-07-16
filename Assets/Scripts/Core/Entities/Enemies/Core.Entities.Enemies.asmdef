@@ -1,7 +1,7 @@
 {
     "name": "Core.Entities.Enemies",
     "rootNamespace": "Core.Entities.Enemies",
-    "references": [],
+    "references": ["GUID:111573a203b0f3347bb6d13ef1ca6f57"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
