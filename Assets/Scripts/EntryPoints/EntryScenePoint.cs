@@ -18,6 +18,7 @@ namespace EntryPoints
         [Inject]
         private void Construct(ViewManager viewManager)
         {
+            Application.targetFrameRate = 30;
             _viewManager = viewManager;
 
             _viewManager.ShowView<EntryPresenter>();
