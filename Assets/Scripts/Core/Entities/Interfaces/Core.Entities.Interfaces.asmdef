@@ -1,0 +1,14 @@
+{
+    "name": "Core.Entities.Interfaces",
+    "rootNamespace": "Core.Entities.Interfaces",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
