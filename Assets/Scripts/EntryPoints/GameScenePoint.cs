@@ -13,7 +13,7 @@ namespace EntryPoints
         private void Construct(ViewManager viewManager)
         {
             _viewManager = viewManager;
-            _viewManager.ShowView<GamePresenter>();
+            _viewManager.ShowView<ClickAnywherePresenter>();
         }
     }
 }

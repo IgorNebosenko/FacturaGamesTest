@@ -516,6 +516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc008f6ab99432792bdf1d117974c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsText: {fileID: 4487275935905993659}
+  levelText: {fileID: 2793224589714516427}
+  progress: {fileID: 2177824659254018007}
+  pauseButton: {fileID: 4546982401096220488}
 --- !u!1 &6798531625071997327
 GameObject:
   m_ObjectHideFlags: 0
