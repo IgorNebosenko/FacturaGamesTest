@@ -7,7 +7,7 @@ namespace Core.Entities.Turret
     public class TurretController : MonoBehaviour
     {
         private PlayerInput _playerInput;
-        
+
         [Inject]
         private void Construct(InputActions inputActions)
         {
@@ -18,8 +18,14 @@ namespace Core.Entities.Turret
         private void FixedUpdate()
         {
             _playerInput.Update();
-            
-            //Todo translate to rotation position
+
+            var direction = _playerInput.TurretDestination;
+
+            if (direction.sqrMagnitude > 0.001f)
+            {
+                var angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(-90f, 0, angle);
+            }
         }
     }
 }
