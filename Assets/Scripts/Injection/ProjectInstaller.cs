@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Configs;
+using Core.Input;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,8 @@ namespace Injection
         public override void InstallBindings()
         {
             Container.BindInstance(playerConfig).AsSingle();
+            
+            Container.Bind<InputActions>().AsSingle();
         }
     }
 }
