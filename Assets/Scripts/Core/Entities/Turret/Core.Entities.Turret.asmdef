@@ -1,0 +1,14 @@
+{
+    "name": "Core.Entities.Turret",
+    "rootNamespace": "Core.Entities.Turret",
+    "references": ["GUID:2d4e1003e6fb03f43ad57288e894cf68"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
