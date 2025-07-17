@@ -7,7 +7,9 @@ namespace Core.Entities.Enemies
 {
     public class EnemyController : MonoBehaviour, IHaveHealth, IHaveMotor
     {
+        public event Action<float> OnHealthChanged;
         public event Action OnDeath;
+        public float MaxHealth { get; private set; }
         public float Health { get; private set; }
         public IMotor Motor { get; private set; }
         
@@ -21,6 +23,8 @@ namespace Core.Entities.Enemies
             }
             
             Health = health;
+            MaxHealth = health;
+            OnHealthChanged?.Invoke(health);
         }
 
         public void TakeDamage(float damage)
@@ -32,6 +36,8 @@ namespace Core.Entities.Enemies
             }
             
             Health -= damage;
+            
+            OnHealthChanged?.Invoke(Health);
             
             if (Health <= 0)
                 Death();

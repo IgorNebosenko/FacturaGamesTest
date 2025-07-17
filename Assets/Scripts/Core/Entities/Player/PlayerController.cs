@@ -11,8 +11,10 @@ namespace Core.Entities.Player
     public class PlayerController : MonoBehaviour, IHaveMotor, IHaveHealth, IHavePosition
     {
         private PlayerConfig _playerConfig;
-        
+
+        public event Action<float> OnHealthChanged;
         public event Action OnDeath;
+        public float MaxHealth { get; private set; }
         public float Health { get; private set; }
         public IMotor Motor { get; private set; }
         public Vector3 Position => transform.position;
@@ -48,6 +50,8 @@ namespace Core.Entities.Player
             }
 
             Health = health;
+            MaxHealth = health;
+            OnHealthChanged?.Invoke(health);
         }
 
         public void TakeDamage(float damage)
@@ -59,6 +63,8 @@ namespace Core.Entities.Player
             }
             
             Health -= damage;
+            
+            OnHealthChanged?.Invoke(Health);
             
             if (Health <= 0)
                 Death();
