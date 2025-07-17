@@ -16,7 +16,7 @@ namespace UI.Presenters
         public void OnPauseButtonClick()
         {
             Time.timeScale = 0;
-            //ToDo popup of pause
+            _popupManager.ShowPopup<PausePopupPresenter>();
         }
     }
 }
