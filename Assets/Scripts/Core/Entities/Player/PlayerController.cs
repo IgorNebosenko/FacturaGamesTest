@@ -17,6 +17,8 @@ namespace Core.Entities.Player
         public IMotor Motor { get; private set; }
         public Vector3 Position => transform.position;
 
+        public bool IsStoped { get; set; } = true;
+
         [Inject]
         private void Construct(PlayerConfig playerConfig)
         {
@@ -32,7 +34,8 @@ namespace Core.Entities.Player
 
         private void FixedUpdate()
         {
-            Motor.Simulate(Time.fixedDeltaTime);
+            if (!IsStoped)
+                Motor.Simulate(Time.fixedDeltaTime);
         }
 
         public void InitHealth(float health)
