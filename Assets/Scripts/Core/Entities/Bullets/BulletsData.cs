@@ -8,5 +8,6 @@ namespace Core.Entities.Bullets
         [field: SerializeField] public float Speed { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public float Lifetime { get; private set; }
+        [field: SerializeField] public float Cooldown { get; private set; }
     }
 }

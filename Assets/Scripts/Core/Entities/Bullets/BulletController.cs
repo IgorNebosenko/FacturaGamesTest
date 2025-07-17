@@ -31,6 +31,8 @@ namespace Core.Entities.Bullets
 
         private void OnCollisionEnter(Collision collision)
         {
+            Debug.Log("OnCollisionEnter!");
+            
             if (collision.gameObject.TryGetComponent<IHaveHealth>(out var haveHealth))
             {
                 haveHealth.TakeDamage(_bulletsData.Damage);
