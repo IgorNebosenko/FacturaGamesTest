@@ -76,3 +76,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerConfig: {fileID: 11400000, guid: 437aed54f4651074f88f091bb6e486cd, type: 2}
   bulletsData: {fileID: 11400000, guid: cd335ed12d363154e93270171fe06c12, type: 2}
+  bullet: {fileID: 1141288439165596214, guid: d61313beeacbee54e9896f6dc9d1e388, type: 3}
